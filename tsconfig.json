@@ -1,11 +1,11 @@
 {
-    "extends": "./tsconfig.base.json",
-    "compilerOptions": {
-      "baseUrl": "./packages",
-      "paths": {
-        "@postgres-queries/*": ["./*/src"]
-      },
-      "strictNullChecks": true,
-      "noImplicitAny": true
-    }
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["esnext"],
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
+}

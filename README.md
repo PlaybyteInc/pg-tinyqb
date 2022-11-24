@@ -1,33 +1,12 @@
-<table>
-        <tr>
-            <td><img width="20" src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/archive.svg" alt="archived" /></td>
-            <td><strong>Archived Repository</strong><br />
-            This code is no longer maintained. Feel free to fork it, but use it at your own risks.
-        </td>
-        </tr>
-</table>
+# pg-tinyqb
 
-# postgres-queries
-
-Utility to generate and execute postgresql queries with ease.
+Utility to generate postgresql queries with ease.
 
 ## Install
 
-`npm install --save postgres-queries`
+`npm install --save @playbyteinc/pg-tinyqb`
 
 ## Introduction
-Creating query and executing them are two separate concerns. And thus postgres-queries is divided in two parts:
-- The pool, that allows to connect to the postgres database and execute query.
-- The query builders (insertOne, selectOne, etc..) that allows to generate sql, and the corresponding parameters.
-
-## Pool
-Extend [node-pg-pool](https://github.com/brianc/node-pg-pool)
-Allow to connect to postgresql and execute query
-It adds:
-- Named query parameter support
-- An helper to link a query builder to the client.
-
-## Query Builder
 The main idea behind the query builder is to be able build a query thanks to a configuration object:
 - the name of a table
 - its primary key(s)
