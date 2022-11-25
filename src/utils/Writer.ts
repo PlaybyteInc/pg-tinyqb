@@ -47,7 +47,8 @@ export default class Writer<T> {
      * @this A writer holding a function
      */
     public ap<A, B>(other: Writer<A>): Writer<B> {
-        return this.chain((fn: ((v: A) => B) & T) => other.map(fn));
+        // NOTE: Maybe bug - MR
+        return this.chain((fn) => other.map(fn as (v: A) => B));
     }
     public flatten<A>(): Writer<A> {
         const inner = (this.value as any) as Writer<A>;

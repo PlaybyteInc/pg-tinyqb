@@ -50,7 +50,8 @@ export default class List<T> {
      * Allow to apply values to functions contained in List
      */
     public ap<A, B>(other: List<A>): List<B> {
-        return this.chain((fn: ((v: A) => B) & T): List<B> => other.map(fn));
+        // NOTE: Maybe bug - MR
+        return this.chain((fn) => other.map(fn as (v: A) => B));
     }
     /**
      * Traversable method

@@ -15,7 +15,7 @@ export const sanitizeIdentifierFunc = (primaryKey: string[], id: string) => {
             sanitizeParameter(primaryKey),
             checkLiteralKeys(primaryKey),
         )(id);
-    } catch (error) {
+    } catch (error: any) {
         throw new Error(`Invalid identifier: ${error.message}`);
     }
 };

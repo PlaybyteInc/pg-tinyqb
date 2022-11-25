@@ -59,7 +59,7 @@ export const update = (
         const setQuery = writableCols
             .filter(column => typeof updateParameters[column] !== 'undefined')
             .reduce(
-                (result, column) => [...result, `${column}=$${column}_u`],
+                (result: string[], column) => [...result, `${column}=$${column}_u`],
                 [],
             );
 

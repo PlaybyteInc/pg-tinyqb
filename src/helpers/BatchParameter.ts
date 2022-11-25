@@ -8,6 +8,6 @@ export const batchParameter = (cols: string[]) => {
     return (rows: object[]) =>
         rows
             .map(sanitize)
-            .map((row, index) => addSuffix(row, index + 1))
+            .map((row: any, index) => addSuffix(row, index + 1))
             .reduce((result, row) => ({ ...result, ...row }), {});
 };
